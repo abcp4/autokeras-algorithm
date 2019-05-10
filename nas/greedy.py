@@ -56,11 +56,12 @@ class GreedySearcher(Searcher):
                  trainer_args=None,
                  default_model_len=None,
                  default_model_width=None,
-                 skip_conn = None):
+                 skip_conn=None):
         super(GreedySearcher, self).__init__(n_output_node, input_shape,
                                              path, metric, loss, generators,
                                              verbose, trainer_args, default_model_len,
-                                             default_model_width)
+                                             default_model_width,skip_conn=None)
+        print("GREEDY SEARCH")
         self.optimizer = GreedyOptimizer(self, metric)
 
     def generate(self, multiprocessing_queue):
