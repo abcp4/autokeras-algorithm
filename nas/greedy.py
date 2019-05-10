@@ -8,9 +8,10 @@ from autokeras.search import Searcher
 
 class GreedyOptimizer:
 
-    def __init__(self, searcher, metric):
+    def __init__(self, searcher, metric,skip_conn = None):
         self.searcher = searcher
         self.metric = metric
+        self.skip_conn = None
 
     def generate(self, descriptors, timeout, sync_message):
         """Generate new neighbor architectures from the best model.
