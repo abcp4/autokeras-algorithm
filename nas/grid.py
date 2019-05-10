@@ -41,7 +41,7 @@ class GridSearcher(Searcher):
     def __init__(self, n_output_node, input_shape, path, metric, loss, generators, verbose, search_space={},
                  trainer_args=None, default_model_len=None, default_model_width=None,skip_conn=None):
         super(GridSearcher, self).__init__(n_output_node, input_shape, path, metric, loss, generators, verbose,
-                                           trainer_args, default_model_len, default_model_width,skip_conn)
+                                           trainer_args, default_model_len, default_model_width,skip_conn=None)
         self.search_space, self.search_dimensions = assert_search_space(search_space)
         self.search_space_counter = 0
 
